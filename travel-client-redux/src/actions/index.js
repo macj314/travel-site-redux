@@ -14,13 +14,12 @@ export const getPlacesFailure = (error) => ({
   error
 });
 
+
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestPlaces);
     return fetch('http://localhost:5004/api/Places', {
-      headers: {
-        "Authorization": 'Bearer ${process.env.BEARER_TOKEN}'
-      }
+      authorization: {"Bearer Token": `${process.env.BEARER_TOKEN}`}
     })
       .then(response => response.json())
       .then(
