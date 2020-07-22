@@ -23,8 +23,8 @@ class Places extends React.Component {
         <React.Fragment>
           <h2>List of Places</h2>
           <ol>
-            {places.map((place, index) =>
-              <li key={index}>
+            {places.map((place, placeId) =>
+              <li key={placeId}>
                 <h3>{place.city}</h3>
                 <h3>{place.country}</h3>
                 <p>{place.description}</p>
