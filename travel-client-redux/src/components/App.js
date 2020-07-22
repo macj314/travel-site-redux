@@ -1,10 +1,10 @@
 import React from 'react';
-// import './App.css';
+import Places from './Places';
 
 function App() {
   return (
     <React.Fragment>
-      < Headlines />
+      < Places />
     </React.Fragment>
   );
 }
