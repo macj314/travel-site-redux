@@ -14,18 +14,15 @@ export const getPlacesFailure = (error) => ({
   error
 });
 
-
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestPlaces);
     return fetch('http://localhost:5004/api/Places', {headers: {"Authorization": `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`}})
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          dispatch(getPlacesSuccess(jsonifiedResponse.results));
-        })
-      .catch((error) => {
-        dispatch(getPlacesFailure(error));
-      });
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {dispatch(getPlacesSuccess(jsonifiedResponse.results));})
+    .catch((error) => {
+      dispatch(getPlacesFailure(error));
+    });
   }
 }

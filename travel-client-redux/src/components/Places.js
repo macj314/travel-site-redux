@@ -19,12 +19,13 @@ class Places extends React.Component {
     } else if (isLoading) {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
+      console.log(places);
       return (
         <React.Fragment>
           <h2>List of Places</h2>
           <ol>
-            {places.map((place, placeId) =>
-              <li key={placeId}>
+            {places.map((place, index) =>
+              <li key={index}>
                 <h3>{place.city}</h3>
                 <h3>{place.country}</h3>
                 <p>{place.description}</p>
